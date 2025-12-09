@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Reviews App
+
+A modern Next.js application for managing and displaying product reviews. Users can browse products, view existing reviews, and submit new reviews with ratings.
+
+## Features
+
+- 📦 Display list of products fetched from backend
+- ⭐ View product reviews with star ratings
+- ✍️ Submit new reviews for selected products
+- ✅ Form validation with error messages
+- 🔄 Loading states during data fetching and submission
+- 🎨 Modern, responsive UI with dark mode support
+- 🧪 Unit tests for React components
+
+## Tech Stack
+
+- **Framework**: Next.js 16
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: React Context API
+- **Testing**: Jest + React Testing Library
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- Backend API running on `http://localhost:3000`
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run unit tests:
 
-## Learn More
+```bash
+npm test
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run tests in watch mode:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test:watch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Build
 
-## Deploy on Vercel
+Build for production:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start production server:
+
+```bash
+npm start
+```
+
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── ProductForm.tsx          # Review submission form
+│   ├── ProductsList.tsx         # Product and review display
+│   └── __tests__/               # Unit tests
+├── productContext.tsx           # React Context for state management
+├── page.tsx                     # Main page component
+└── globals.css                  # Global styles
+```
+
+## API Endpoints
+
+The app expects the following backend endpoints:
+
+- `GET http://localhost:3000/products` - Fetch all products with reviews
+- `POST http://localhost:3000/:productId/review` - Submit a new review
+
+## Usage
+
+1. **View Products**: Products are automatically loaded and displayed on the page
+2. **Submit Review**: 
+   - Select a product from the dropdown
+   - Enter your name
+   - Choose a rating (1-5 stars)
+   - Write your review comment
+   - Click "Submit Review"
+
+## Features in Detail
+
+### Form Validation
+- Product selection is required
+- Reviewer name must be at least 2 characters
+- Rating must be between 1 and 5
+- Comment must be at least 10 characters
+
+### UI/UX
+- Responsive grid layout for products
+- Visual star ratings
+- Loading spinners during async operations
+- Error and success message displays
+- Dark mode support
+- Smooth transitions and hover effects
+
+## License
+
+MIT
