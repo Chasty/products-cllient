@@ -2,6 +2,8 @@
 
 A modern Next.js application for managing and displaying product reviews. Users can browse products, view existing reviews, and submit new reviews with ratings.
 
+![Product Reviews App Screenshot](./images/clidemo.png)
+
 ## Features
 
 - 📦 Display list of products fetched from backend
